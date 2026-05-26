@@ -1,0 +1,42 @@
+{
+  "name": "@opentalon/monaco-talon",
+  "version": "0.1.0",
+  "description": "Monaco Editor language plugin for Talon — syntax highlighting, snippets, autocomplete, hover docs, themes.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "monaco-editor": ">=0.40.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "monaco-editor": "^0.52.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.2.1"
+  },
+  "keywords": ["monaco", "monaco-editor", "talon", "language", "syntax-highlighting", "dsl"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opentalon/talon-monaco-editor-plugin"
+  }
+}
